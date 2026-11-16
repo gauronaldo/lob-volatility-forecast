@@ -883,6 +883,85 @@ def findings_block(diffs: pd.DataFrame, holdout_diffs: pd.DataFrame | None) -> s
     return "\n".join(lines)
 
 
+HEADLINE_MODELS = [
+    ("naive", "A", ""),
+    ("har_ridge", "A", ""),
+    ("forest", "D", ""),
+    ("gbdt", "D", ""),
+    ("mlp", "D", ""),
+    ("blend", "D", ""),
+    ("gbdt", "C_comp", " (look-ahead)"),
+]
+HEADLINE_COMPARISONS = {
+    "RQ3 look-ahead: C_strict minus C_comp": "Look-ahead gain (C_strict - C_comp)",
+    "RQ1: D minus B": "Past neighbours and lags (D - B)",
+    "Order error: D_gap minus D": "Order-error sensitivity (D_gap - D)",
+    "RQ4: MLP minus LightGBM D": "MLP - LightGBM",
+}
+
+
+def headline_block(
+    table: pd.DataFrame,
+    diffs: pd.DataFrame,
+    holdout: pd.DataFrame | None,
+    holdout_diffs: pd.DataFrame | None,
+) -> str:
+    """Short README summary: main models and the key paired differences."""
+
+    def ci(value: float, low: float, high: float, sign: str = "") -> str:
+        return f"{value:{sign}.4f} ({low:{sign}.4f} to {high:{sign}.4f})"
+
+    dev = table[table["scheme"] == "walk_forward"].set_index(["model", "features"])
+    hold = holdout.set_index(["model", "features"]) if holdout is not None else None
+    lines = [
+        "| Model | Features | Development RMSPE | Holdout RMSPE | Dev train s |",
+        "| --- | --- | --- | --- | --- |",
+    ]
+    for model, features, note in HEADLINE_MODELS:
+        if (model, features) not in dev.index:
+            continue
+        d = dev.loc[(model, features)]
+        cells = [
+            f"{LABELS[model]}{note}",
+            features,
+            ci(d["rmspe_pooled"], d["ci_low"], d["ci_high"]),
+            "-",
+            f"{d['train_seconds']:.0f}",
+        ]
+        if hold is not None and (model, features) in hold.index:
+            h = hold.loc[(model, features)]
+            cells[3] = ci(h["rmspe"], h["ci_low"], h["ci_high"])
+        lines.append("| " + " | ".join(cells) + " |")
+
+    ladder = table[table["model"] == "gbdt_fixed"].set_index("scheme")
+    lines += [
+        "",
+        "| Paired difference in RMSPE | Development | Holdout |",
+        "| --- | --- | --- |",
+    ]
+    if {"kfold_rows", "walk_forward"} <= set(ladder.index):
+        lines.append(
+            "| Validation: random rows to walk-forward (same model) |"
+            f" {ladder.loc['kfold_rows', 'rmspe_pooled']:.4f} to"
+            f" {ladder.loc['walk_forward', 'rmspe_pooled']:.4f} | - |"
+        )
+    by_dev = diffs.set_index("comparison")
+    by_hold = (
+        holdout_diffs.set_index("comparison") if holdout_diffs is not None else None
+    )
+    for key, label in HEADLINE_COMPARISONS.items():
+        if key not in by_dev.index:
+            continue
+        r = by_dev.loc[key]
+        cell = "-"
+        if by_hold is not None and key in by_hold.index:
+            h = by_hold.loc[key]
+            cell = ci(h["difference"], h["ci_low"], h["ci_high"], "+")
+        dev_cell = ci(r["difference"], r["ci_low"], r["ci_high"], "+")
+        lines.append(f"| {label} | {dev_cell} | {cell} |")
+    return "\n".join(lines)
+
+
 def data_block(config: dict[str, Any]) -> str:
     """Dataset size and the split of time_ids into roles."""
     from lobvol.cv import load_roles
@@ -1008,6 +1087,7 @@ def run_evaluate(config: dict[str, Any]) -> dict[str, Any]:
     if path.exists():
         holdout_diffs = pd.read_csv(path)
     blocks["findings"] = findings_block(diffs, holdout_diffs)
+    blocks["headline"] = headline_block(table, diffs, holdout, holdout_diffs)
     blocks["data"] = data_block(config)
     path = results / "block_holdout.md"
     if path.exists():

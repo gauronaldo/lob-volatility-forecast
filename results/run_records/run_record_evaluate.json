@@ -149,7 +149,7 @@
       }
     }
   },
-  "git_commit": "b054868d1d986eb6f0c7343fd2e758bfa2d85304",
+  "git_commit": "393be86e5dfe3315a6b87384a9a47b20317ab1ee",
   "packages": {
     "PyYAML": "6.0.3",
     "lightgbm": "4.6.0",
