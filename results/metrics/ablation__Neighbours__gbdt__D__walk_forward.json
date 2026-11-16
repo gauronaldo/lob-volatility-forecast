@@ -1,0 +1,83 @@
+{
+ "folds": [
+  {
+   "fold": 0,
+   "n_rows": 57001,
+   "rmspe": 0.2188408543771357,
+   "naive_rmspe": 0.32510032759027474
+  },
+  {
+   "fold": 1,
+   "n_rows": 57008,
+   "rmspe": 0.21506290909985062,
+   "naive_rmspe": 0.31914039484334383
+  },
+  {
+   "fold": 2,
+   "n_rows": 57007,
+   "rmspe": 0.23708142756460698,
+   "naive_rmspe": 0.36935141961899437
+  },
+  {
+   "fold": 3,
+   "n_rows": 57008,
+   "rmspe": 0.21289431654924224,
+   "naive_rmspe": 0.32577776064594693
+  },
+  {
+   "fold": 4,
+   "n_rows": 56994,
+   "rmspe": 0.22076363024454554,
+   "naive_rmspe": 0.3452093639867296
+  }
+ ],
+ "rmspe_mean": 0.22092862756707624,
+ "rmspe_sd": 0.009542742994513506,
+ "rmspe_pooled": 0.22109345406262734,
+ "naive_pooled": 0.3374199877410143,
+ "naive_mean": 0.33691585333705787,
+ "n_rows": 285018,
+ "model": "gbdt",
+ "features": "D",
+ "scheme": "walk_forward",
+ "drop_group": "Neighbours",
+ "seeds": [
+  0
+ ],
+ "n_features": [
+  33,
+  44,
+  49,
+  58,
+  55
+ ],
+ "train_seconds": 42.8,
+ "fits": [
+  {
+   "fold": 0,
+   "seed": 0,
+   "trees": 693
+  },
+  {
+   "fold": 1,
+   "seed": 0,
+   "trees": 83
+  },
+  {
+   "fold": 2,
+   "seed": 0,
+   "trees": 121
+  },
+  {
+   "fold": 3,
+   "seed": 0,
+   "trees": 162
+  },
+  {
+   "fold": 4,
+   "seed": 0,
+   "trees": 296
+  }
+ ],
+ "tuned": true
+}

@@ -1,0 +1,85 @@
+{
+ "folds": [
+  {
+   "fold": 0,
+   "n_rows": 57001,
+   "rmspe": 0.22110160957901556,
+   "naive_rmspe": 0.32510032759027474
+  },
+  {
+   "fold": 1,
+   "n_rows": 57008,
+   "rmspe": 0.20368253026291405,
+   "naive_rmspe": 0.31914039484334383
+  },
+  {
+   "fold": 2,
+   "n_rows": 57007,
+   "rmspe": 0.2321697217988994,
+   "naive_rmspe": 0.36935141961899437
+  },
+  {
+   "fold": 3,
+   "n_rows": 57008,
+   "rmspe": 0.20764396997577203,
+   "naive_rmspe": 0.32577776064594693
+  },
+  {
+   "fold": 4,
+   "n_rows": 56994,
+   "rmspe": 0.21540276736179678,
+   "naive_rmspe": 0.3452093639867296
+  }
+ ],
+ "rmspe_mean": 0.21600011979567957,
+ "rmspe_sd": 0.011284794067601687,
+ "rmspe_pooled": 0.2162356800912329,
+ "naive_pooled": 0.3374199877410143,
+ "naive_mean": 0.33691585333705787,
+ "n_rows": 285018,
+ "model": "blend",
+ "features": "D",
+ "scheme": "walk_forward",
+ "drop_group": null,
+ "seeds": [],
+ "members": [
+  "har_ridge__A",
+  "forest__D",
+  "gbdt__D",
+  "mlp__D"
+ ],
+ "weights": [
+  {
+   "har_ridge__A": 0.25,
+   "forest__D": 0.25,
+   "gbdt__D": 0.25,
+   "mlp__D": 0.25
+  },
+  {
+   "har_ridge__A": 0.0,
+   "forest__D": 0.1553,
+   "gbdt__D": 0.2482,
+   "mlp__D": 0.5965
+  },
+  {
+   "har_ridge__A": 0.0,
+   "forest__D": 0.1525,
+   "gbdt__D": 0.2196,
+   "mlp__D": 0.6279
+  },
+  {
+   "har_ridge__A": 0.0,
+   "forest__D": 0.0,
+   "gbdt__D": 0.2278,
+   "mlp__D": 0.7722
+  },
+  {
+   "har_ridge__A": 0.0,
+   "forest__D": 0.0,
+   "gbdt__D": 0.2664,
+   "mlp__D": 0.7336
+  }
+ ],
+ "train_seconds": 0.0,
+ "tuned": false
+}

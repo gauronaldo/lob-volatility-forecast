@@ -1,0 +1,7 @@
+# METHOD.md 5.4, model 2. Alpha is chosen on the inner time split.
+model: har_ridge
+target: log_y
+inputs: [log_rv_600, log_rv_300, log_rv_150, log_market_rv]
+stock_fixed_effects: true
+back_transform: exp_mu_minus_1.5_s2
+alphas: [0.01, 0.1, 1.0, 10.0, 100.0, 1000.0]

@@ -1,0 +1,124 @@
+{
+ "order": {
+  "status": "ok",
+  "method": "end_start_chain",
+  "checks": {
+   "synthetic Spearman rho": {
+    "value": 0.9999589372433578,
+    "ok": true
+   },
+   "synthetic 99th percentile displacement": {
+    "value": 3.0,
+    "ok": true
+   },
+   "direction cues agree": {
+    "value": 0.07108931004750407,
+    "ok": true
+   },
+   "jump ratio (consecutive / random pairs)": {
+    "value": 0.016003030479215016,
+    "ok": true
+   },
+   "jump permutation p-value": {
+    "value": 0.000999000999000999,
+    "ok": true
+   },
+   "lag-1 autocorrelation of market log-RV": {
+    "value": 0.7168702329280703,
+    "ok": true
+   }
+  },
+  "agreement": {
+   "isomap": {
+    "spearman": 0.8558537796339944,
+    "displacement_median": 364.0,
+    "displacement_p99": 1522.6200000000008,
+    "adjacent_inverted": 0.46408984068947506,
+    "edge_median": 0.24769810585722155,
+    "edge_mean": 0.3220394146415848,
+    "best_successor_share": 0.0697310002611648,
+    "rv_autocorr": 0.38957962459348333
+   },
+   "greedy_2opt": {
+    "spearman": 0.9965707296172857,
+    "displacement_median": 1.0,
+    "displacement_p99": 484.71000000000004,
+    "adjacent_inverted": 0.1830765212849308,
+    "edge_median": 0.014269633685816255,
+    "edge_mean": 0.02129747441119587,
+    "best_successor_share": 0.6508226691042047,
+    "rv_autocorr": 0.7189702585690781
+   },
+   "isomap_2opt": {
+    "spearman": 0.9999129341395481,
+    "displacement_median": 0.0,
+    "displacement_p99": 93.71000000000004,
+    "adjacent_inverted": 0.1365891877774876,
+    "edge_median": 0.013925185582860765,
+    "edge_mean": 0.02047601843770962,
+    "best_successor_share": 0.676416819012797,
+    "rv_autocorr": 0.7184865419261671
+   },
+   "end_start_chain": {
+    "spearman": 1.0,
+    "displacement_median": 0.0,
+    "displacement_p99": 0.0,
+    "adjacent_inverted": 0.0,
+    "edge_median": 0.01298819994322786,
+    "edge_mean": 0.01906986370003154,
+    "best_successor_share": 0.7683468268477409,
+    "rv_autocorr": 0.7168702329280703
+   }
+  }
+ },
+ "primary_scheme": "walk_forward",
+ "figures": {
+  "fig1": "fig1_leakage_ladder.png",
+  "fig2": "fig2_strict_vs_competition.png",
+  "fig3": "fig3_model_ladder.png",
+  "fig4": "fig4_ablation.png",
+  "fig5": "fig5_error_by_market_volatility.png"
+ },
+ "errors": {
+  "models": [
+   "naive",
+   "har_ridge",
+   "gbdt_A",
+   "gbdt_D",
+   "blend"
+  ],
+  "best": "gbdt_D",
+  "n_rows": 285018,
+  "least_liquid_stock": 33,
+  "rmspe_all": 0.21817706490923644,
+  "rmspe_without_least_liquid": 0.21753965567577646,
+  "rmspe_least_liquid_only": 0.2800479341133813,
+  "worst_stocks": [
+   {
+    "stock_id": 31,
+    "gbdt_D": 0.7354,
+    "naive": 1.2161
+   },
+   {
+    "stock_id": 37,
+    "gbdt_D": 0.2917,
+    "naive": 0.4311
+   },
+   {
+    "stock_id": 33,
+    "gbdt_D": 0.28,
+    "naive": 0.4371
+   },
+   {
+    "stock_id": 18,
+    "gbdt_D": 0.2761,
+    "naive": 0.4208
+   },
+   {
+    "stock_id": 81,
+    "gbdt_D": 0.2689,
+    "naive": 0.3604
+   }
+  ]
+ }
+}

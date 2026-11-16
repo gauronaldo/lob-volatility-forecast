@@ -1,0 +1,14 @@
+# METHOD.md 5.4, model 5. Fixed architecture; not tuned.
+model: mlp
+target: log_ratio
+loss: mean_squared_percentage_error
+input_transform: quantile_normal
+stock_embedding: true
+embedding_dim: 16
+hidden: [256, 128, 64]
+dropout: 0.1
+lr: 0.002
+weight_decay: 0.00001
+batch_size: 2048
+max_epochs: 40
+patience: 5

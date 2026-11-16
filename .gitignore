@@ -218,3 +218,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Project: competition data and credentials never go to git (docs/METHOD.md rule 5)
+/data/
+kaggle.json
+*.zip
+
+# Local assistant instructions
+AGENTS.md
+CLAUDE.md

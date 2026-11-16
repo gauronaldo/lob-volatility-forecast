@@ -1,0 +1,83 @@
+{
+ "folds": [
+  {
+   "fold": 0,
+   "n_rows": 57001,
+   "rmspe": 0.21694384191571928,
+   "naive_rmspe": 0.32510032759027474
+  },
+  {
+   "fold": 1,
+   "n_rows": 57008,
+   "rmspe": 0.21044566228757558,
+   "naive_rmspe": 0.31914039484334383
+  },
+  {
+   "fold": 2,
+   "n_rows": 57007,
+   "rmspe": 0.23519944186923775,
+   "naive_rmspe": 0.36935141961899437
+  },
+  {
+   "fold": 3,
+   "n_rows": 57008,
+   "rmspe": 0.21136111146951925,
+   "naive_rmspe": 0.32577776064594693
+  },
+  {
+   "fold": 4,
+   "n_rows": 56994,
+   "rmspe": 0.2192711216754829,
+   "naive_rmspe": 0.3452093639867296
+  }
+ ],
+ "rmspe_mean": 0.21864423584350695,
+ "rmspe_sd": 0.009970201614177289,
+ "rmspe_pooled": 0.21882598174568002,
+ "naive_pooled": 0.3374199877410143,
+ "naive_mean": 0.33691585333705787,
+ "n_rows": 285018,
+ "model": "gbdt",
+ "features": "D",
+ "scheme": "walk_forward",
+ "drop_group": "Trades",
+ "seeds": [
+  0
+ ],
+ "n_features": [
+  40,
+  50,
+  54,
+  65,
+  61
+ ],
+ "train_seconds": 45.0,
+ "fits": [
+  {
+   "fold": 0,
+   "seed": 0,
+   "trees": 308
+  },
+  {
+   "fold": 1,
+   "seed": 0,
+   "trees": 113
+  },
+  {
+   "fold": 2,
+   "seed": 0,
+   "trees": 99
+  },
+  {
+   "fold": 3,
+   "seed": 0,
+   "trees": 167
+  },
+  {
+   "fold": 4,
+   "seed": 0,
+   "trees": 377
+  }
+ ],
+ "tuned": true
+}

@@ -1,0 +1,56 @@
+{
+  "git_commit": "b054868d1d986eb6f0c7343fd2e758bfa2d85304",
+  "source_sha256": "3c3166b815e6ddc220fe4ad4103972157f631afe878f100c20a49c606b210b17",
+  "models": [
+    [
+      "naive",
+      "A"
+    ],
+    [
+      "har_ridge",
+      "A"
+    ],
+    [
+      "forest",
+      "D"
+    ],
+    [
+      "gbdt",
+      "A"
+    ],
+    [
+      "gbdt",
+      "B"
+    ],
+    [
+      "gbdt",
+      "C_strict"
+    ],
+    [
+      "gbdt",
+      "C_comp"
+    ],
+    [
+      "gbdt",
+      "C_strict_gap"
+    ],
+    [
+      "gbdt",
+      "D"
+    ],
+    [
+      "gbdt",
+      "D_gap"
+    ],
+    [
+      "mlp",
+      "D"
+    ],
+    [
+      "blend",
+      "D"
+    ]
+  ],
+  "primary_scheme": "walk_forward",
+  "order_status": "ok"
+}

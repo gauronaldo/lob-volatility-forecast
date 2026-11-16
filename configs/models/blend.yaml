@@ -1,0 +1,8 @@
+# METHOD.md 5.4, model 6. Fitted on out-of-fold predictions only.
+model: blend
+weights: non_negative_sum_to_one
+members:
+  - [har_ridge, A]
+  - [forest, D]
+  - [gbdt, D]
+  - [mlp, D]

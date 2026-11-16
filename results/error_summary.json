@@ -1,0 +1,134 @@
+{
+ "models": [
+  "naive",
+  "har_ridge",
+  "gbdt_A",
+  "gbdt_D",
+  "blend"
+ ],
+ "best": "gbdt_D",
+ "n_rows": 285018,
+ "least_liquid_stock": 33,
+ "rmspe_all": 0.21817706490923644,
+ "rmspe_without_least_liquid": 0.21753965567577646,
+ "rmspe_least_liquid_only": 0.2800479341133813,
+ "worst_stocks": [
+  {
+   "stock_id": 31,
+   "gbdt_D": 0.7354,
+   "naive": 1.2161
+  },
+  {
+   "stock_id": 37,
+   "gbdt_D": 0.2917,
+   "naive": 0.4311
+  },
+  {
+   "stock_id": 33,
+   "gbdt_D": 0.28,
+   "naive": 0.4371
+  },
+  {
+   "stock_id": 18,
+   "gbdt_D": 0.2761,
+   "naive": 0.4208
+  },
+  {
+   "stock_id": 81,
+   "gbdt_D": 0.2689,
+   "naive": 0.3604
+  }
+ ],
+ "decile": [
+  {
+   "decile": 1,
+   "n_rows": 28560,
+   "naive": 0.36038,
+   "har_ridge": 0.31642,
+   "gbdt_A": 0.27206,
+   "gbdt_D": 0.26618,
+   "blend": 0.26125
+  },
+  {
+   "decile": 2,
+   "n_rows": 28448,
+   "naive": 0.29814,
+   "har_ridge": 0.2768,
+   "gbdt_A": 0.23869,
+   "gbdt_D": 0.22358,
+   "blend": 0.22115
+  },
+  {
+   "decile": 3,
+   "n_rows": 28556,
+   "naive": 0.28655,
+   "har_ridge": 0.2541,
+   "gbdt_A": 0.23941,
+   "gbdt_D": 0.2262,
+   "blend": 0.22369
+  },
+  {
+   "decile": 4,
+   "n_rows": 28446,
+   "naive": 0.27797,
+   "har_ridge": 0.24276,
+   "gbdt_A": 0.2289,
+   "gbdt_D": 0.21902,
+   "blend": 0.21577
+  },
+  {
+   "decile": 5,
+   "n_rows": 28446,
+   "naive": 0.32499,
+   "har_ridge": 0.27661,
+   "gbdt_A": 0.26069,
+   "gbdt_D": 0.2424,
+   "blend": 0.23607
+  },
+  {
+   "decile": 6,
+   "n_rows": 28559,
+   "naive": 0.27142,
+   "har_ridge": 0.23279,
+   "gbdt_A": 0.21905,
+   "gbdt_D": 0.20473,
+   "blend": 0.201
+  },
+  {
+   "decile": 7,
+   "n_rows": 28447,
+   "naive": 0.26631,
+   "har_ridge": 0.22261,
+   "gbdt_A": 0.21423,
+   "gbdt_D": 0.19409,
+   "blend": 0.19252
+  },
+  {
+   "decile": 8,
+   "n_rows": 28558,
+   "naive": 0.26061,
+   "har_ridge": 0.23472,
+   "gbdt_A": 0.21557,
+   "gbdt_D": 0.18603,
+   "blend": 0.18856
+  },
+  {
+   "decile": 9,
+   "n_rows": 28447,
+   "naive": 0.40251,
+   "har_ridge": 0.28388,
+   "gbdt_A": 0.23764,
+   "gbdt_D": 0.19416,
+   "blend": 0.19653
+  },
+  {
+   "decile": 10,
+   "n_rows": 28551,
+   "naive": 0.52918,
+   "har_ridge": 0.3155,
+   "gbdt_A": 0.27855,
+   "gbdt_D": 0.21298,
+   "blend": 0.21546
+  }
+ ]
+}

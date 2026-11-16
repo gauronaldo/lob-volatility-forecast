@@ -1,0 +1,72 @@
+feature,mean_abs_shap,group,method,rows
+lag1_target_r,0.031258274098176914,Lags,lightgbm pred_contrib (TreeSHAP),3000
+nn_price20_own_r,0.027934923210642965,Neighbours,lightgbm pred_contrib (TreeSHAP),3000
+nn_vol20_own_r,0.021828707464440284,Neighbours,lightgbm pred_contrib (TreeSHAP),3000
+stock_id,0.018257838900440512,Stock level,lightgbm pred_contrib (TreeSHAP),3000
+nn_price5_mkt_r,0.017269457322239962,Neighbours,lightgbm pred_contrib (TreeSHAP),3000
+lagm_target_r,0.017128871854811874,Lags,lightgbm pred_contrib (TreeSHAP),3000
+nn_vol5_own_r,0.014264845791547017,Neighbours,lightgbm pred_contrib (TreeSHAP),3000
+rq1_600,0.011947067918450098,Realized,lightgbm pred_contrib (TreeSHAP),3000
+nn_price5_own_r,0.011484590337644368,Neighbours,lightgbm pred_contrib (TreeSHAP),3000
+rv1_half_ratio,0.009872418962686837,Multi-window,lightgbm pred_contrib (TreeSHAP),3000
+lag1_rv,0.008774057792517168,Lags,lightgbm pred_contrib (TreeSHAP),3000
+mkt_rv_std,0.008735228681643791,Same-time market,lightgbm pred_contrib (TreeSHAP),3000
+tsec_150,0.00871929166218561,Trades,lightgbm pred_contrib (TreeSHAP),3000
+lagm_mkt_target,0.008151279211036894,Lags,lightgbm pred_contrib (TreeSHAP),3000
+nn_price20_mkt_r,0.007769437806364816,Neighbours,lightgbm pred_contrib (TreeSHAP),3000
+tsec_300,0.007302561458524391,Trades,lightgbm pred_contrib (TreeSHAP),3000
+n_updates,0.006560178608262794,Book,lightgbm pred_contrib (TreeSHAP),3000
+spread_150,0.0057513378360761844,Book,lightgbm pred_contrib (TreeSHAP),3000
+t_orders,0.0052725866712164515,Trades,lightgbm pred_contrib (TreeSHAP),3000
+nn_vol5_mkt_r,0.005019683287741326,Neighbours,lightgbm pred_contrib (TreeSHAP),3000
+rv_over_mkt,0.004966258160087518,Same-time market,lightgbm pred_contrib (TreeSHAP),3000
+rv2_150,0.004700897735372821,Multi-window,lightgbm pred_contrib (TreeSHAP),3000
+lag1_mkt_target,0.0046000747470670246,Lags,lightgbm pred_contrib (TreeSHAP),3000
+trv_150,0.004334441356833407,Trades,lightgbm pred_contrib (TreeSHAP),3000
+nn_vol20_mkt_r,0.004219733507165262,Neighbours,lightgbm pred_contrib (TreeSHAP),3000
+nn_price5_mkt,0.004204738910318723,Neighbours,lightgbm pred_contrib (TreeSHAP),3000
+rq1_300,0.0039690483281975145,Multi-window,lightgbm pred_contrib (TreeSHAP),3000
+nn_price20_mkt,0.003224390974265323,Neighbours,lightgbm pred_contrib (TreeSHAP),3000
+rv_over_cluster,0.003034460138965601,Stock clusters,lightgbm pred_contrib (TreeSHAP),3000
+nn_vol5_mkt,0.002820003875200074,Neighbours,lightgbm pred_contrib (TreeSHAP),3000
+nn_vol20_mkt,0.0028039630417975594,Neighbours,lightgbm pred_contrib (TreeSHAP),3000
+tvol_150,0.0027634667856648114,Trades,lightgbm pred_contrib (TreeSHAP),3000
+mkt_rv_mean,0.00245228021689783,Same-time market,lightgbm pred_contrib (TreeSHAP),3000
+spread_300,0.0024445438437609678,Book,lightgbm pred_contrib (TreeSHAP),3000
+trv_600,0.0023001741301067083,Trades,lightgbm pred_contrib (TreeSHAP),3000
+rv2_300,0.0021600611621102103,Multi-window,lightgbm pred_contrib (TreeSHAP),3000
+rsv_up_300,0.002096117951068989,Multi-window,lightgbm pred_contrib (TreeSHAP),3000
+tsec_600,0.0020515597866108196,Trades,lightgbm pred_contrib (TreeSHAP),3000
+rv2_600,0.0019461744456724314,Realized,lightgbm pred_contrib (TreeSHAP),3000
+rv1_m9,0.001737698970660233,Multi-window,lightgbm pred_contrib (TreeSHAP),3000
+nn_vol20_own,0.001718848133085706,Neighbours,lightgbm pred_contrib (TreeSHAP),3000
+trv_300,0.0017054377375552768,Trades,lightgbm pred_contrib (TreeSHAP),3000
+lag1_target,0.0016831993459367925,Lags,lightgbm pred_contrib (TreeSHAP),3000
+nn_vol5_own,0.0015531741605888825,Neighbours,lightgbm pred_contrib (TreeSHAP),3000
+wap_gap,0.00142327423744932,Book,lightgbm pred_contrib (TreeSHAP),3000
+rv_rel_stock,0.0012666111003323134,Stock level,lightgbm pred_contrib (TreeSHAP),3000
+tvol_600,0.0012106356678419216,Trades,lightgbm pred_contrib (TreeSHAP),3000
+rv1_m5,0.0011941811513480835,Multi-window,lightgbm pred_contrib (TreeSHAP),3000
+rsv_up_600,0.0011240287574639989,Realized,lightgbm pred_contrib (TreeSHAP),3000
+depth_mean,0.0010928749023973127,Book,lightgbm pred_contrib (TreeSHAP),3000
+rsv_up_150,0.0010389398342739644,Multi-window,lightgbm pred_contrib (TreeSHAP),3000
+spread_std,0.00090320196471076,Book,lightgbm pred_contrib (TreeSHAP),3000
+imb1_std,0.0008623458799197972,Book,lightgbm pred_contrib (TreeSHAP),3000
+imb1_mean,0.0008284072616966835,Book,lightgbm pred_contrib (TreeSHAP),3000
+tvol_300,0.000828232916855797,Trades,lightgbm pred_contrib (TreeSHAP),3000
+nn_price20_own,0.0007047405124986851,Neighbours,lightgbm pred_contrib (TreeSHAP),3000
+rv1_m4,0.0006465396828894953,Multi-window,lightgbm pred_contrib (TreeSHAP),3000
+rv1_600,0.0006462080328751197,Realized,lightgbm pred_contrib (TreeSHAP),3000
+rv1_m7,0.000616094764002781,Multi-window,lightgbm pred_contrib (TreeSHAP),3000
+rv1_m6,0.0005948651396775814,Multi-window,lightgbm pred_contrib (TreeSHAP),3000
+rv1_m2,0.0005656516939619957,Multi-window,lightgbm pred_contrib (TreeSHAP),3000
+rv1_m1,0.0005647730375259395,Multi-window,lightgbm pred_contrib (TreeSHAP),3000
+rv1_m0,0.0005527963823348211,Multi-window,lightgbm pred_contrib (TreeSHAP),3000
+rv1_m3,0.0005385357590850042,Multi-window,lightgbm pred_contrib (TreeSHAP),3000
+rsv_dn_300,0.000526358787404119,Multi-window,lightgbm pred_contrib (TreeSHAP),3000
+cluster_rv,0.0005232512298937922,Stock clusters,lightgbm pred_contrib (TreeSHAP),3000
+rsv_dn_600,0.00048766309936649615,Realized,lightgbm pred_contrib (TreeSHAP),3000
+rsv_dn_150,0.00048129178620980354,Multi-window,lightgbm pred_contrib (TreeSHAP),3000
+stock_spread_typ,0.0004714706669870323,Stock level,lightgbm pred_contrib (TreeSHAP),3000
+lagm_target,0.00024857253347104795,Lags,lightgbm pred_contrib (TreeSHAP),3000
+nn_price5_own,0.00020310037477370014,Neighbours,lightgbm pred_contrib (TreeSHAP),3000

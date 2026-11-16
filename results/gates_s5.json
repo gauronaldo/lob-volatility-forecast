@@ -1,0 +1,12 @@
+{
+  "naive_rmspe_development_rows": 0.3442253457377212,
+  "naive_range": [
+    0.33,
+    0.35
+  ],
+  "naive_ok": true,
+  "sanity_rmspe_group_time": 0.22579888974295487,
+  "sanity_max": 0.24,
+  "sanity_ok": true,
+  "n_rows": 342020
+}

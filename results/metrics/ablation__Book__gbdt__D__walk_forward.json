@@ -1,0 +1,83 @@
+{
+ "folds": [
+  {
+   "fold": 0,
+   "n_rows": 57001,
+   "rmspe": 0.21543895821193246,
+   "naive_rmspe": 0.32510032759027474
+  },
+  {
+   "fold": 1,
+   "n_rows": 57008,
+   "rmspe": 0.20881051598413833,
+   "naive_rmspe": 0.31914039484334383
+  },
+  {
+   "fold": 2,
+   "n_rows": 57007,
+   "rmspe": 0.2397982007130512,
+   "naive_rmspe": 0.36935141961899437
+  },
+  {
+   "fold": 3,
+   "n_rows": 57008,
+   "rmspe": 0.2111705952513252,
+   "naive_rmspe": 0.32577776064594693
+  },
+  {
+   "fold": 4,
+   "n_rows": 56994,
+   "rmspe": 0.21830457303452752,
+   "naive_rmspe": 0.3452093639867296
+  }
+ ],
+ "rmspe_mean": 0.21870456863899493,
+ "rmspe_sd": 0.012353325007500795,
+ "rmspe_pooled": 0.21898354036514028,
+ "naive_pooled": 0.3374199877410143,
+ "naive_mean": 0.33691585333705787,
+ "n_rows": 285018,
+ "model": "gbdt",
+ "features": "D",
+ "scheme": "walk_forward",
+ "drop_group": "Book",
+ "seeds": [
+  0
+ ],
+ "n_features": [
+  42,
+  52,
+  56,
+  64,
+  63
+ ],
+ "train_seconds": 42.8,
+ "fits": [
+  {
+   "fold": 0,
+   "seed": 0,
+   "trees": 212
+  },
+  {
+   "fold": 1,
+   "seed": 0,
+   "trees": 88
+  },
+  {
+   "fold": 2,
+   "seed": 0,
+   "trees": 80
+  },
+  {
+   "fold": 3,
+   "seed": 0,
+   "trees": 165
+  },
+  {
+   "fold": 4,
+   "seed": 0,
+   "trees": 339
+  }
+ ],
+ "tuned": true
+}

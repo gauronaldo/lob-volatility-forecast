@@ -1,0 +1,78 @@
+# Base configuration read by every `python -m lobvol` command.
+# The `frozen` and `gates` blocks mirror METHOD.md sections 3, 5.1 and 6.
+# They were fixed before any result was seen (docs/METHOD.md rule 8).
+
+paths:
+  raw: data/raw
+  interim: data/interim
+  features: data/features
+  splits: data/interim/splits
+  results: results
+
+frozen:
+  holdout_fraction: 0.20
+  embargo: 10                 # g, in time_ids
+  walk_forward_folds: 5
+  windows: [600, 300, 150]    # seconds
+  neighbours_k: [5, 20]
+  lag_single: 1
+  lag_mean_last: 6
+  inner_split_fraction: 0.15  # last share of training time_ids
+  optuna_trials: 40
+  optuna_feature_set: B
+  optuna_seed: 0
+  seeds: [0, 1, 2]
+  bootstrap_resamples: 1000
+  bootstrap_block_length: 20  # time_ids
+  tick_size: 0.01
+  order_gap: 10               # C_strict_gap and D_gap, equal to the embargo
+
+gates:
+  naive_rmspe: [0.33, 0.35]       # S5, development rows
+  sanity_rmspe_max: 0.24          # S5, LightGBM, set A, group_time
+  order_spearman_min: 0.99        # S3, synthetic data
+  order_displacement_p99_max: 10  # S3, synthetic data, equal to the embargo
+  order_jump_ratio_max: 0.25      # S3, real data
+  order_p_value_max: 0.01         # S3, real data
+  order_autocorr_percentile: 99   # S3, real data
+  order_permutations: 1000
+
+order:
+  method: auto            # auto | isomap | greedy_2opt | isomap_2opt | end_start_chain
+  isomap_neighbors: 10
+  max_nan_share: 0.05     # stocks with more missing prices are dropped
+  refine_sweeps: 40
+  chain_candidates: 30    # successors considered per time_id
+  chain_max_segment: 30   # refinement moves segments of 1..30 time_ids
+  trim: 0.2               # share of largest squared differences ignored
+  outlier_window: 21      # time_ids, rolling median along the first-pass order
+  outlier_max_dev: 0.3    # a price this far from its neighbours is set to NaN
+  synth: {n_stocks: 40, n_time_ids: 400, seed: 0}
+
+compute:
+  threads: 0                # 0 = all cores
+
+features:
+  n_clusters: 7             # KMeans on the stock correlation of log RV
+  noise_columns: 3          # Gaussian noise columns for feature selection
+
+runs:
+  ladder:                   # S5: one fixed LightGBM under every scheme
+    model: gbdt_fixed
+    features: A
+    schemes: [kfold_rows, group_time, blocked_time, walk_forward]
+  models:                   # S7: under the primary scheme
+    - [naive, A]
+    - [har_ridge, A]
+    - [forest, D]
+    - [gbdt, A]
+    - [gbdt, B]
+    - [gbdt, C_strict]
+    - [gbdt, C_comp]
+    - [gbdt, C_strict_gap]
+    - [gbdt, D]
+    - [gbdt, D_gap]
+    - [mlp, D]
+    - [blend, D]
+  ablation: {model: gbdt, features: D, seed: 0}
+  shap: {target: [gbdt, D], rows: 3000}

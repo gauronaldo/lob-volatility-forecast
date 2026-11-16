@@ -1,0 +1,34 @@
+# METHOD.md 5.4, model 4: LightGBM on the ratio target with 1/q^2 weights.
+model: gbdt
+target: ratio
+weights: inverse_q_squared
+categorical: [stock_id]
+
+# Fixed hyperparameters and a fixed number of trees: the leakage ladder (S5)
+# and the noise-column feature selection.
+ladder:
+  learning_rate: 0.05
+  num_leaves: 63
+  min_data_in_leaf: 200
+  feature_fraction: 0.7
+  bagging_fraction: 0.8
+  lambda_l2: 1.0
+  max_bin: 255
+  n_estimators: 400
+
+# Fixed part of the tuned model. The number of trees comes from early
+# stopping on the inner split.
+tuned:
+  learning_rate: 0.05
+  max_bin: 255
+  max_rounds: 3000
+  early_stopping_rounds: 100
+
+# Optuna TPE search space: [low, high, log scale].
+search:
+  num_leaves: [15, 255, true]
+  min_data_in_leaf: [50, 2000, true]
+  feature_fraction: [0.3, 1.0, false]
+  bagging_fraction: [0.5, 1.0, false]
+  lambda_l1: [0.001, 10.0, true]
+  lambda_l2: [0.001, 100.0, true]

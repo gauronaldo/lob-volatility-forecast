@@ -1,0 +1,8 @@
+# METHOD.md 5.4, model 3. Optional; the first model to cut.
+model: forest
+target: ratio
+weights: inverse_q_squared
+n_estimators: 200
+min_samples_leaf: 100
+max_samples: 0.3
+max_features: 0.33

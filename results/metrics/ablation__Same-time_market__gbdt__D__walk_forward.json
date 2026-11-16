@@ -1,0 +1,83 @@
+{
+ "folds": [
+  {
+   "fold": 0,
+   "n_rows": 57001,
+   "rmspe": 0.217407319990264,
+   "naive_rmspe": 0.32510032759027474
+  },
+  {
+   "fold": 1,
+   "n_rows": 57008,
+   "rmspe": 0.2083657807531775,
+   "naive_rmspe": 0.31914039484334383
+  },
+  {
+   "fold": 2,
+   "n_rows": 57007,
+   "rmspe": 0.2340104610716005,
+   "naive_rmspe": 0.36935141961899437
+  },
+  {
+   "fold": 3,
+   "n_rows": 57008,
+   "rmspe": 0.21034651113233763,
+   "naive_rmspe": 0.32577776064594693
+  },
+  {
+   "fold": 4,
+   "n_rows": 56994,
+   "rmspe": 0.21836455267132696,
+   "naive_rmspe": 0.3452093639867296
+  }
+ ],
+ "rmspe_mean": 0.21769892512374134,
+ "rmspe_sd": 0.010096532497682728,
+ "rmspe_pooled": 0.2178860786678458,
+ "naive_pooled": 0.3374199877410143,
+ "naive_mean": 0.33691585333705787,
+ "n_rows": 285018,
+ "model": "gbdt",
+ "features": "D",
+ "scheme": "walk_forward",
+ "drop_group": "Same-time market",
+ "seeds": [
+  0
+ ],
+ "n_features": [
+  44,
+  55,
+  61,
+  71,
+  68
+ ],
+ "train_seconds": 46.9,
+ "fits": [
+  {
+   "fold": 0,
+   "seed": 0,
+   "trees": 265
+  },
+  {
+   "fold": 1,
+   "seed": 0,
+   "trees": 92
+  },
+  {
+   "fold": 2,
+   "seed": 0,
+   "trees": 165
+  },
+  {
+   "fold": 3,
+   "seed": 0,
+   "trees": 163
+  },
+  {
+   "fold": 4,
+   "seed": 0,
+   "trees": 344
+  }
+ ],
+ "tuned": true
+}
